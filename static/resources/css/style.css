@@ -1,0 +1,281 @@
+/*========================================================*/
+/*========== GREENVILLE SWING DANCE "style.css" ==========*/
+/*========================================================*/
+
+
+/*========================================================*/
+/*============= BROWSER DEFAULT OVERRIDES ================*/
+/*========================================================*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: 'Lato', 'Arial', sans-serif;
+    font-size: 25px;
+    font-weight: 300;
+    text-rendering: optimizeLegibility;
+}
+
+
+/*========================================================*/
+/*============= HEADINGS h1, h2, h3, etc. ================*/
+/*========================================================*/
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Galada', 'Arial', sans-serif;
+}
+
+
+/*========================================================*/
+/*================== HEADER SECTION ======================*/
+/*========================================================*/
+header {
+    background-position: top;
+    background-size: cover;
+    background-image: url(img/dancefloor.jpg);
+    background-attachment: fixed;
+    padding-top: 2%;
+    min-height: 100vh; /* added to fix excess white space near bottom of header when resizing the screen */
+    color: #031127;
+   /* font-size: inherit;*/
+}
+
+        /*-------- WELCOME TEXTBOX ---------*/
+.welcome-textbox { /*parent element is .row */
+/*    border: 1px solid black;*/
+    position: relative;
+    width: 95%;
+    max-width: 400px;
+    margin: 0 auto 2% auto; /* center */
+    font-size: 150%;
+}
+.welcome-textbox p {
+/* positioning */
+    display: block;
+    position: absolute;
+    top: 6%;
+    left: -20%;
+/* content */
+    font-size: 50%;
+    font-weight: 900;
+}
+.welcome-textbox h1 {
+/* positioning */
+    display: block;
+    position: relative;
+    width: 90%;
+    height: auto;
+    margin: 5% auto 5% auto;
+    padding: 0;
+/* content */
+    font-size: 400%;
+    font-weight: 500;
+    text-align: center;
+    line-height: 96%;
+}
+.welcome-textbox span {
+    color: #0a4a1b;
+    text-shadow: 1px 2px #061939;
+}
+
+    /*---------------WELCOME INFO --------------*/
+welcome-lessons-link:hover {
+       
+}
+
+.welcome-info {
+    border: 2px solid #cbc3c3;
+    border-radius: 5%;
+    background-color: rgba(4, 23, 54, 0.9);
+    position: relative;
+    margin: 0 auto 2% auto;
+    padding: 2%;
+    width: 90%;
+    height: 50%;
+    font-family: 'Galada', 'Arial', sans-serif;
+    font-size: 300%;
+    color: #e1e7f4;
+    text-align: center;
+    line-height: 150%;
+    transition: background-color 0.2s;
+}
+.welcome-info:hover {
+    background-color: #051b3e;
+    border-color: #051b3e;
+    color: #fff;
+}
+.welcome-info a:hover {
+    color: #f00;
+    
+}
+.welcome-info i {
+    margin-left: 3%;
+}
+
+.welcome-btn-area {
+/*    border: 1px solid white;*/
+    text-align: center;
+}
+
+.scroll-down {
+/* position */
+    display: none;
+    width: 120px;
+    margin: 4% auto 0 auto;
+/* content */
+    font-size: 60%;
+    text-align: center;
+    white-space: nowrap;
+}
+
+
+/*========================================================*/
+/*================== REUSABLE COMPONENTS =================*/
+/*========================================================*/
+.row {
+/*    border: 2px solid yellow;*/
+    max-width: 1140px;
+    margin: 0 auto;
+}
+
+
+/*========================================================*/
+/*================== BUTTONS =============================*/
+/*========================================================*/
+.btn {
+/*    positioning */
+    padding: 19px 25px;
+/*    content */
+    word-spacing: 2px;
+    white-space: nowrap;
+}
+
+.btn:link,
+.btn:visited { 
+    /*common button styling */
+/* positioning */
+/*    border: 2px solid white;*/
+    border-radius: 200px;
+    transition: background-color 0.2s;
+/* content */
+}
+
+.btn-take-me:link,
+.btn-take-me:visited {
+    background-color: rgba(142, 7, 7, 0.9);
+/*    border: 2px solid #eee;*/
+}
+.btn-take-me:hover {
+    background-color: #db0808;
+    border-color: #db0808;
+}
+
+.btn-welcome-screen {
+/* positioning */
+    display: inline-block;
+    width: 92%;
+    margin: 1% auto;
+/* content */
+    text-align: center;
+    font-size: 250%;
+    color: #fff;
+    transition: background-color 0.2s;
+}
+
+.btn-instagram {
+    background-color: rgba(130, 23, 139, 0.8);
+}
+.btn-instagram:hover {
+    background-color: rgba(130, 23, 139, 1.0);
+}
+
+.btn-facebook {
+    background-color: rgba(5, 27, 62, 0.8);
+}
+.btn-facebook:hover {
+    background-color: rgba(5, 27, 62, 1.0);
+}
+
+
+/*
+.btn-follow-us:last-child {
+    background-color: rgba(5, 27, 62, 0.8);
+}
+.btn-follow-us:last-child:hover {
+    background-color: #051b3e;
+}
+
+.btn-follow-us:first-child {
+    background-color: rgba(130, 23, 139, 0.8);
+}
+.btn-follow-us:first-child:hover {
+    background-color: rgba(130, 23, 139, 1.0);
+}
+*/
+
+.btn i {
+    
+    padding: 0 0 1% 5%;
+    float: left;
+}
+
+
+/*========================================================*/
+/*================== ICONS ===============================*/
+/*========================================================*/
+i {
+    float: left;
+}
+
+
+/*========================================================*/
+/*================== LISTS ===============================*/
+/*========================================================*/
+ul {
+    list-style-type: none;
+}
+
+
+/*========================================================*/
+/*================== LINKS  ==============================*/
+/*========================================================*/
+a {
+    text-align: center;
+}
+
+a:visited,
+a:link{
+    text-decoration: none;
+    color: #fff; /* DEPRICATED - inherit color from context of parent container */
+}
+
+
+@media only screen and (min-width: 1000px) {
+    
+    .welcome-textbox h1 {
+        font-size: 260%;
+    }
+    
+    
+    .welcome-info {
+/*        position */
+        width: 66%;
+        /* content */
+        font-size: 200%;
+        line-height: 150%;
+    }
+    
+    
+    .btn-welcome-screen {
+/*        positioning */
+        display: inline-block;
+        width: 30%;
+        float: left;
+	margin: 1%;
+/*        content */
+        font-size: 110%;
+    }
+    
+}
