@@ -1,0 +1,16 @@
+
+<label for="login-form">Please Log In:</label>
+<form id="login-form" class="login-form" action="" method="post">
+    {{ form.hidden_tag() }} <!-- hidden input -->
+
+    {{ form.username.label }}
+    {{ form.username() }}
+
+    {{ form.password.label }}
+    {{ form.password() }}
+
+    {{ form.remember_me() }}
+    {{ form.remember_me.label }}
+
+    {{ form.submit() }}
+</form>
