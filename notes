@@ -1,0 +1,5 @@
+DATABASE DESIGN:
+
+Models
+        1) Administrator: id, username, password, privilege
+        2) Event: id, day_of_week, price, time_frame, title
