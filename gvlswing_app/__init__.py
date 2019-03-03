@@ -13,4 +13,4 @@ db = SQLAlchemy(app)
 migrate = Migrate(app, db)
 
 
-from gvlswing_app import routes  # this line avoids a circular dependency
+from gvlswing_app import routes, models  # this line avoids a circular dependency
