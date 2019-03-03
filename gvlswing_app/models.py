@@ -27,4 +27,7 @@ class ActivityLog(db.Model):
     log_id = db.Column(db.Integer, primary_key=True)
     timestamp = db.Column(db.DateTime, index=True, default=datetime.utcnow)
     admin_id = db.Column(db.Integer, db.ForeignKey('administrator.id'))
-    # how do I track which content they modified
+    # how do I track which content they modified??
+
+    def __repr__(self):
+        return f"<Mod Id: {self.log_id} timestamp: {self.timestamp}"
