@@ -7,7 +7,7 @@ from flask_login import UserMixin
 
 class Administrator(UserMixin, db.Model):
     """
-        Administrator accounts for changing content throughout the website.
+        Administrator accounts are for changing content throughout the website.
         The "role" attribute will have two types: owners, staff
     """
     id = db.Column(db.Integer, primary_key=True)
