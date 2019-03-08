@@ -1,9 +1,11 @@
 # models for the gvlswing.db
-from gvlswing_app import db
+from gvlswing_app import db, login
 from datetime import datetime
+from werkzeug.security import generate_password_hash, check_password_hash
+from flask_login import UserMixin
 
 
-class Administrator(db.Model):
+class Administrator(UserMixin, db.Model):
     """
         Administrator accounts for changing content throughout the website.
         The "role" attribute will have two types: owners, staff
@@ -17,6 +19,19 @@ class Administrator(db.Model):
 
     def __repr__(self):
         return f"<Admin: {self.username} Role: {self.role}>"
+
+    def set_password(self, password_entered):  # upon registration
+        self.password_hash = generate_password_hash(password_entered)
+
+    def check_password(self, password_entered):  # upon login
+        # go set up Administrator model with UserMixin
+        pass
+
+
+@login.user_loader  # upon request. Attempts to load either anonymous user or logged in user, probably into current_user
+def attempt_load_user(id):
+    return Administrator.query.get(int(id))
+# end Administrator
 
 
 class ActivityLog(db.Model):
