@@ -7,7 +7,7 @@
 
 from gvlswing_app import app  # use the flask app object created in __init__.py
 from gvlswing_app.forms import LoginForm
-from flask import render_template, url_for, redirect
+from flask import render_template, url_for, redirect, flash, request
 from flask_login import current_user, login_user
 from gvlswing_app.models import ActivityLog, Administrator
 
@@ -17,23 +17,28 @@ def index():
     return render_template("index.html")
 
 
-@app.route("/admin")
+@app.route("/admin")  # the login panel after access has been granted
 def admin_panel():
     """
     Load the administration panel if the administrator is logged in. If not, redirect to login.
-    :return:
     """
-    # if current_user.is_authenticated():
-    #     return render_template(url_for('admin-panel'))
-    return redirect(url_for("admin_login"))
+    if not current_user.is_authenticated:
+        flash("Woops!")
+        return redirect(url_for("index"))
+    flash("You are logged in as admin.")
+    return render_template("index")
 
 
-@app.route("/admin/login")
+@app.route("/admin/login", methods=['GET', 'POST'])  # the login form to grant access
 def admin_login():
     if current_user.is_authenticated:
-        return redirect(url_for("index"))
-    else:
+        flash("Um ... you're already logged in")
+        return redirect(url_for("admin_panel"))
+    elif request == 'GET':  # log them in
         form = LoginForm()
+        form.validate_on_submit()
+    elif request == 'POST':  # they are trying to submit a login form
+
     return render_template("login.html", form=form)
 
 # end routes
