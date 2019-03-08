@@ -25,7 +25,7 @@ def admin_panel():
     """
     # if current_user.is_authenticated():
     #     return render_template(url_for('admin-panel'))
-    return redirect(url_for("index"))
+    return redirect(url_for("admin_login"))
 
 
 @app.route("/admin/login")

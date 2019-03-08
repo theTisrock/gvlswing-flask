@@ -1,35 +1,42 @@
 <!--
-    http://www.gvlswing.com
+http://www.gvlswing.com
 
-    Created by Chris Torok for Burl Walker.
-    Date: Feb 19 2019
+Created by Chris Torok for Burl Walker.
+Date: Feb 19 2019
 
-    This file has an underscore in the name to indicate that it is a partial view, similar to ASP.NET MVC w/ C# & Razor.
-    All partial views will follow this convention.
- -->
+This file has an underscore in the name to indicate that it is a partial view, similar to ASP.NET MVC w/ C# & Razor.
+All partial views will follow this convention.
+-->
 <!DOCTYPE html>
 <html lang="en-us">
 <!--                                                HEAD                                        -->
-    {% include "_head.html" %}
+<head>
+    <link rel="stylesheet" type="text/css" href="/static/vendors/css/normalize.css"><!--BROWSER RESET-->
+    <link rel="stylesheet" type="text/css" href="/static/vendors/css/grid.css">     <!--GRID LIBRARY/SOURCE-->
+    <link rel="stylesheet" type="text/css" href="/static/resources/css/style.css">  <!--CUSTOM STYLING & GRID-->
+    <link rel="stylesheet" type="text/css" href="vendors/css/ionicons.min.css">     <!--ICONS-->
+    <link href="https://fonts.googleapis.com/css?family=Lato|Galada" rel="stylesheet">
+    <!-- title -->
+    <title>{% block title%}{% endblock %}</title>
+</head>
 <!--                                                BODY                                        -->
-    <body>
-        <!--                                        HEADER                                      -->
-        <header>
-
-            {% block header %}
-            {% endblock %}
-        </header>
+<body>
+<!--                                        HEADER                                      -->
+    <header>
+    {% block header %}
+    {% endblock %}
+    </header>
     <!--                                            CONTENT                                     -->
-        <main>
-      {% block content %}
-        <!--  Using Jinja2 this is where web page content will be displayed. Any page using this template will inherit a header and footer automat ically  -->
-        <!--  put nothing in this space -->
-      {% endblock %}
-        </main>
+    <main>
+    {% block content %}
+    <!--  Using Jinja2 this is where web page content will be displayed. Any page using this template will inherit a header and footer automat ically  -->
+    <!--  put nothing in this space -->
+    {% endblock %}
+    </main>
     <!--                                            FOOTER                                      -->
-        <footer>
-            {% block footer %}
-            {% endblock %}
-        </footer>
-    </body>
+    <footer>
+    {% block footer %}
+    {% endblock %}
+    </footer>
+</body>
 </html>
