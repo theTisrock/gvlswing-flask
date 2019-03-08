@@ -1,11 +1,11 @@
 {% extends "_layout.html" %}
-
-{% block content%}
+{% block title %}Login{% endblock %}
 
 {% block header %}
-<h1>Sign In</h1>
+<title>GVLswing Admin Login</title>
 {% endblock %}
 
+{% block content %}
 <form action="" method="post">
     {{ form.hidden_tag() }}
     <p>
@@ -30,5 +30,7 @@
     </p>
 
 </form>
+{% endblock %} <!-- end CONTENT -->
 
-{% endblock%}
+{% block footer %}
+{% endblock%} <!-- end FOOTER -->
