@@ -23,6 +23,7 @@ All partial views will follow this convention.
 <body>
 <!--                                        HEADER                                      -->
     <header>
+
         {% with messages = get_flashed_messages() %}
         {% if messages %}
         <ul>
@@ -31,6 +32,8 @@ All partial views will follow this convention.
             {% endfor %}
         </ul>
         {% endif %}
+        {% endwith %}
+
     {% block header %}
     {% endblock %}
     </header>

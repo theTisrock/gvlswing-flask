@@ -25,7 +25,7 @@ class Administrator(UserMixin, db.Model):
 
     def check_password(self, password_entered):  # upon login
         # go set up Administrator model with UserMixin
-        pass
+        return check_password_hash(self.password_hash, password_entered)
 
 
 @login.user_loader  # upon request. Attempts to load either anonymous user or logged in user, probably into current_user

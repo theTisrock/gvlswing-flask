@@ -5,7 +5,7 @@
 # be kept at top level
 # ???
 
-from gvlswing_app import app  # use the flask app object created in __init__.py
+from gvlswing_app import app, db  # use the flask app object created in __init__.py
 from gvlswing_app.forms import LoginForm
 from flask import render_template, url_for, redirect, flash, request
 from flask_login import current_user, login_user
@@ -31,14 +31,23 @@ def admin_panel():
 
 @app.route("/admin/login", methods=['GET', 'POST'])  # the login form to grant access
 def admin_login():
+    form = LoginForm()
+
     if current_user.is_authenticated:
         flash("Um ... you're already logged in")
         return redirect(url_for("admin_panel"))
-    elif request == 'GET':  # log them in
-        form = LoginForm()
-        form.validate_on_submit()
-    elif request == 'POST':  # they are trying to submit a login form
 
-    return render_template("login.html", form=form)
+    if request.method == 'GET':  # log them in
+        return render_template("login.html", form=form)
+
+    if form.validate_on_submit() and request.method == 'POST':  # they are trying to submit a login form
+        user = Administrator.query.filter_by(username=form.username.data).first()
+        if user and user.check_password(form.password.data):
+            login_user(user, remember=form.remember_me.data)
+            flash(f"You're logged in as {user.username}")
+            return redirect(url_for("index"))
+
+    return "Check admin/login route"
+
 
 # end routes
