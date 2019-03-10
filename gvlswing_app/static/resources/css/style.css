@@ -19,6 +19,19 @@ html {
     text-rendering: optimizeLegibility;
 }
 
+/*========================================================*/
+/*======================== TAGS ==========================*/
+/*========================================================*/
+body {
+    background-position: top;
+    background-size: cover;
+    background-image: url(img/dancefloor.jpg);
+    background-attachment: fixed;
+    padding-top: 2%;
+    min-height: 100vh; /* added to fix excess white space near bottom of header when resizing the screen */
+    color: #031127;
+}
+
 
 /*========================================================*/
 /*============= HEADINGS h1, h2, h3, etc. ================*/
@@ -32,14 +45,34 @@ h1, h2, h3, h4, h5, h6 {
 /*================== HEADER SECTION ======================*/
 /*========================================================*/
 header {
-    background-position: top;
+    /* background-position: top;
     background-size: cover;
     background-image: url(img/dancefloor.jpg);
     background-attachment: fixed;
     padding-top: 2%;
-    min-height: 100vh; /* added to fix excess white space near bottom of header when resizing the screen */
+    min-height: 100vh; /* added to fix excess white space near bottom of header when resizing the screen */ /*
     color: #031127;
-   /* font-size: inherit;*/
+    font-size: inherit;*/
+}
+
+/*========================================================*/
+/*================== FOOTER SECTION ======================*/
+/*========================================================*/
+footer {
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: auto;
+    bottom: 0;
+}
+
+footer * {
+    text-align: center;
+}
+
+.fine-print * {
+    font-size: 20px;
+    color: #000 !important;
 }
 
         /*-------- WELCOME TEXTBOX ---------*/
@@ -145,11 +178,20 @@ welcome-lessons-link:hover {
 /*================== BUTTONS =============================*/
 /*========================================================*/
 .btn {
+    /* border: 3px solid red; */
 /*    positioning */
     padding: 19px 25px;
 /*    content */
     word-spacing: 2px;
     white-space: nowrap;
+}
+
+.btn-manage {
+    /* border: 1px solid #fff; */
+    display: block;
+    margin: 0 auto;
+    height: auto;
+    max-width: 30%;
 }
 
 .btn:link,
@@ -246,7 +288,7 @@ a {
 }
 
 a:visited,
-a:link{
+a:link {
     text-decoration: none;
     color: #fff; /* DEPRICATED - inherit color from context of parent container */
 }

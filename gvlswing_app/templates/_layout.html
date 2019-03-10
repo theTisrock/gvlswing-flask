@@ -1,0 +1,59 @@
+<!--
+http://www.gvlswing.com
+
+Created by Chris Torok for Burl Walker.
+Date: Feb 19 2019
+
+This file has an underscore in the name to indicate that it is a partial view, similar to ASP.NET MVC w/ C# & Razor.
+All partial views will follow this convention.
+-->
+<!DOCTYPE html>
+<html lang="en-us">
+<!--                                                HEAD                                        -->
+<head>
+    <link rel="stylesheet" type="text/css" href="/static/vendors/css/normalize.css"><!--BROWSER RESET-->
+    <link rel="stylesheet" type="text/css" href="/static/vendors/css/grid.css">     <!--GRID LIBRARY/SOURCE-->
+    <link rel="stylesheet" type="text/css" href="/static/resources/css/style.css">  <!--CUSTOM STYLING & GRID-->
+    <link rel="stylesheet" type="text/css" href="vendors/css/ionicons.min.css">     <!--ICONS-->
+    <link href="https://fonts.googleapis.com/css?family=Lato|Galada" rel="stylesheet">
+    <!-- title -->
+    <title>{% block title%}{% endblock %}</title>
+</head>
+<!--                                                BODY                                        -->
+<body>
+<!--                                        HEADER                                      -->
+    <header>
+        {% if current_user.is_authenticated %}
+            <a href="/logout">Logout</a>
+        {% endif %}
+
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+            <!-- flashed messages -->
+            <ul>
+                {% for m in messages %}
+                <li>{{ m }}</li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+        {% endwith %}
+
+        {% block header %}
+        {% endblock %}
+    </header>
+    <!--                                            CONTENT                                     -->
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+    <!--                                            FOOTER                                      -->
+    <footer>
+        {% block footer %}
+        {% endblock %}
+
+        <div class="fine-print">
+            <p>&copy; 2019 <a href="/admin/login">Greenville Swing</a></p>
+        </div>
+    </footer>
+</body>
+</html>
