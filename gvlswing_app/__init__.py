@@ -13,6 +13,7 @@ app.config.from_object(Configuration)
 db = SQLAlchemy(app)
 migrate = Migrate(app, db)
 login = LoginManager(app)
+login.login_view = "admin_login"
 
 
 from gvlswing_app import routes, models  # this line avoids a circular dependency
