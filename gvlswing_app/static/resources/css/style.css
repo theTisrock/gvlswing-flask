@@ -55,6 +55,22 @@ header {
     font-size: inherit;*/
 }
 
+/*========================================================*/
+/*================== FOOTER SECTION ======================*/
+/*========================================================*/
+footer {
+    border: 5px solid blue;
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: auto;
+    bottom: 0;
+}
+
+footer * {
+    text-align: center;
+}
+
         /*-------- WELCOME TEXTBOX ---------*/
 .welcome-textbox { /*parent element is .row */
 /*    border: 1px solid black;*/
@@ -158,11 +174,20 @@ welcome-lessons-link:hover {
 /*================== BUTTONS =============================*/
 /*========================================================*/
 .btn {
+    /* border: 3px solid red; */
 /*    positioning */
     padding: 19px 25px;
 /*    content */
     word-spacing: 2px;
     white-space: nowrap;
+}
+
+.btn-manage {
+    /* border: 1px solid #fff; */
+    display: block;
+    margin: 0 auto;
+    height: auto;
+    max-width: 30%;
 }
 
 .btn:link,

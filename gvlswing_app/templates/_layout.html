@@ -23,31 +23,39 @@ All partial views will follow this convention.
 <body>
 <!--                                        HEADER                                      -->
     <header>
+        {% if current_user.is_authenticated %}
+            <a href="/logout">Logout</a>
+        {% endif %}
 
         {% with messages = get_flashed_messages() %}
-        {% if messages %}
-        <ul>
-            {% for m in messages %}
-            <li>{{ m }}</li>
-            {% endfor %}
-        </ul>
-        {% endif %}
+            {% if messages %}
+            <!-- flashed messages -->
+            <ul>
+                {% for m in messages %}
+                <li>{{ m }}</li>
+                {% endfor %}
+            </ul>
+            {% endif %}
         {% endwith %}
 
-    {% block header %}
-    {% endblock %}
+        {% block header %}
+        {% endblock %}
     </header>
     <!--                                            CONTENT                                     -->
     <main>
-    {% block content %}
-    <!--  Using Jinja2 this is where web page content will be displayed. Any page using this template will inherit a header and footer automat ically  -->
-    <!--  put nothing in this space -->
-    {% endblock %}
+        {% block content %}
+        {% endblock %}
     </main>
     <!--                                            FOOTER                                      -->
-    <footer>
-    {% block footer %}
-    {% endblock %}
+    <footer class="footer push">
+        <div class="section-footer">
+            {% block footer %}
+            {% endblock %}
+
+            {% if current_user.is_anonymous %}
+                <a class="btn-manage" href="/admin">manage</a>
+            {% endif %}
+        </div>
     </footer>
 </body>
 </html>
