@@ -59,7 +59,6 @@ header {
 /*================== FOOTER SECTION ======================*/
 /*========================================================*/
 footer {
-    border: 5px solid blue;
     position: absolute;
     display: block;
     width: 100%;
@@ -69,6 +68,11 @@ footer {
 
 footer * {
     text-align: center;
+}
+
+.fine-print * {
+    font-size: 20px;
+    color: #000;
 }
 
         /*-------- WELCOME TEXTBOX ---------*/
@@ -284,9 +288,9 @@ a {
 }
 
 a:visited,
-a:link{
+a:link {
     text-decoration: none;
-    color: #fff; /* DEPRICATED - inherit color from context of parent container */
+    /* color: #fff; /* DEPRICATED - inherit color from context of parent container */
 }
 
 

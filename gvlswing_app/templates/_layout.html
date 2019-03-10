@@ -47,14 +47,12 @@ All partial views will follow this convention.
         {% endblock %}
     </main>
     <!--                                            FOOTER                                      -->
-    <footer class="footer push">
-        <div class="section-footer">
-            {% block footer %}
-            {% endblock %}
+    <footer>
+        {% block footer %}
+        {% endblock %}
 
-            {% if current_user.is_anonymous %}
-                <a class="btn-manage" href="/admin">manage</a>
-            {% endif %}
+        <div class="fine-print">
+            <p>&copy; 2019 <a href="/admin">Greenville Swing</a></p>
         </div>
     </footer>
 </body>
