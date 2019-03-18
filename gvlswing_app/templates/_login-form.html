@@ -1,16 +1,24 @@
-
-<label for="login-form">Please Log In:</label>
-<form id="login-form" class="login-form" action="" method="post">
+<label for="login-form">Login Form</label>
+<form id="login-form" class="login-form" action="/admin/login" method="post">
     {{ form.hidden_tag() }} <!-- hidden input -->
-
-    {{ form.username.label }}
-    {{ form.username() }}
-
-    {{ form.password.label }}
-    {{ form.password() }}
-
-    {{ form.remember_me() }}
-    {{ form.remember_me.label }}
-
-    {{ form.submit() }}
+    <p>
+        {{ form.username.label }} <br>
+        {{ form.username(size=32) }} <br>
+        {% for error in form.username.errors %}
+        <span class="error-messages">{{ error }}</span>
+        {% endfor %}
+    </p>
+    <p>
+        {{ form.password.label }} <br>
+        {{ form.password(size=32) }} <br>
+        {% for error in form.password.errors %}
+        <span class="error-messages">{{ error }}</span>
+        {% endfor %}
+    </p>
+    <p>
+        {{ form.remember_me() }} {{ form.remember_me.label }}
+    </p>
+    <p>
+        {{ form.submit() }}
+    </p>
 </form>

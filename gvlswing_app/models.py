@@ -12,17 +12,36 @@ class Administrator(UserMixin, db.Model):
     """
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(50), unique=True, nullable=False, index=True)
+    email = db.Column(db.String(50), unique=True)
     password_hash = db.Column(db.String(128))
-    role = db.Column(db.String(20), nullable=False)
+    role = db.Column(db.String(20), nullable=False, default="registered")
     activities = db.relationship('ActivityLog', backref='admin', lazy='dynamic')
     # places virtual admin column in ActivityLog table
 
     def __repr__(self):
-        return f"<Admin: {self.username} Role: {self.role}>"
+        return f"<[Admin]:{self.username} [Role]: {self.role} [Email]: {self.email}>"
+
+    # setters
+    def set_role(self, role):
+        self.role = role
+
+    def set_email(self, email_entered):
+        self.email = email_entered
 
     def set_password(self, password_entered):  # upon registration
         self.password_hash = generate_password_hash(password_entered)
 
+    # getters
+    def get_email(self):
+        return self.email
+
+    def get_username(self):
+        return self.username
+
+    def get_role(self):
+        return self.role
+
+    # checkers
     def check_password(self, password_entered):  # upon login
         # go set up Administrator model with UserMixin
         return check_password_hash(self.password_hash, password_entered)

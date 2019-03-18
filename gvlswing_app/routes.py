@@ -6,7 +6,7 @@
 # ???
 
 from gvlswing_app import app, db  # use the flask app object created in __init__.py
-from gvlswing_app.forms import LoginForm
+from gvlswing_app.forms import LoginForm, RegistrationForm
 from flask import render_template, url_for, redirect, flash, request
 from flask_login import current_user, login_user, logout_user, login_required
 from gvlswing_app.models import ActivityLog, Administrator
@@ -57,6 +57,26 @@ def logout():
     logout_user()
     flash("Logged out")
     return redirect(url_for("index"))
+
+
+@app.route("/admin/register", methods=['GET', 'POST'])
+def admin_register():
+    form = RegistrationForm()
+    if current_user.is_authenticated:
+        flash("You're already logged in")
+        return redirect(url_for("admin_panel"))
+    elif request.method == 'GET':
+        return render_template("register.html", form=form)
+    elif request.method == 'POST' and form.validate_on_submit():
+        user = Administrator(username=form.username.data, email=form.email.data)
+        user.set_password(form.password.data)
+        user.set_role("dancer")
+        db.session.add(user)
+        db.session.commit()
+        flash("Registration successful!")
+        return redirect(url_for("index"))
+
+    return "Something went wrong with admin_register() procedure"
 
 
 # end routes

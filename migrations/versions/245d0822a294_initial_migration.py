@@ -1,8 +1,8 @@
-"""rerun
+"""Initial migration
 
-Revision ID: 4bf1d2c264dd
+Revision ID: 245d0822a294
 Revises: 
-Create Date: 2019-03-03 01:00:36.879683
+Create Date: 2019-03-11 16:02:51.514667
 
 """
 from alembic import op
@@ -10,7 +10,7 @@ import sqlalchemy as sa
 
 
 # revision identifiers, used by Alembic.
-revision = '4bf1d2c264dd'
+revision = '245d0822a294'
 down_revision = None
 branch_labels = None
 depends_on = None
@@ -21,9 +21,11 @@ def upgrade():
     op.create_table('administrator',
     sa.Column('id', sa.Integer(), nullable=False),
     sa.Column('username', sa.String(length=50), nullable=False),
+    sa.Column('email', sa.String(length=50), nullable=True),
     sa.Column('password_hash', sa.String(length=128), nullable=True),
     sa.Column('role', sa.String(length=20), nullable=False),
-    sa.PrimaryKeyConstraint('id')
+    sa.PrimaryKeyConstraint('id'),
+    sa.UniqueConstraint('email')
     )
     op.create_index(op.f('ix_administrator_username'), 'administrator', ['username'], unique=True)
     op.create_table('activity_log',
