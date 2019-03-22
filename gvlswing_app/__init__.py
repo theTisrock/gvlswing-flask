@@ -16,4 +16,4 @@ login = LoginManager(app)
 login.login_view = "admin_login"
 
 
-from gvlswing_app import routes, models  # this line avoids a circular dependency
+from gvlswing_app import routes, models, errors  # this line avoids a circular dependency
