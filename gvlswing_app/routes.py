@@ -9,7 +9,7 @@ from gvlswing_app import app, db  # use the flask app object created in __init__
 from gvlswing_app.forms import LoginForm, RegistrationForm
 from flask import render_template, url_for, redirect, flash, request
 from flask_login import current_user, login_user, logout_user, login_required
-from gvlswing_app.models import ActivityLog, Administrator
+from gvlswing_app.models import Administrator
 
 
 @app.route("/")

@@ -2,7 +2,7 @@
 from flask_wtf import FlaskForm
 from wtforms import StringField, PasswordField, BooleanField, SubmitField
 from wtforms.validators import DataRequired, ValidationError, Email, EqualTo
-from gvlswing_app.models import Administrator, ActivityLog
+from gvlswing_app.models import Administrator
 
 
 class LoginForm(FlaskForm):
@@ -21,6 +21,7 @@ class RegistrationForm(FlaskForm):
     password_confirm = PasswordField("confirm password", validators=[DataRequired(), EqualTo("password")])
     submit = SubmitField()
 
+    # custom validators used by flask-wtf
     def validate_username(self, username):
         found_match = Administrator.query.filter_by(username=username.data).first()
         if found_match is not None:
