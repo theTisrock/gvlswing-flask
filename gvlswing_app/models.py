@@ -50,18 +50,5 @@ class Administrator(UserMixin, db.Model):
 @login.user_loader  # upon request. Attempts to load either anonymous user or logged in user, probably into current_user
 def attempt_load_user(id):
     return Administrator.query.get(int(id))
-# end Administrator
 
-
-class ActivityLog(db.Model):
-    """
-        The ActivityLog should record...
-        who modified content, when they modified it, and which content was modified.
-    """
-    log_id = db.Column(db.Integer, primary_key=True)
-    timestamp = db.Column(db.DateTime, index=True, default=datetime.utcnow)
-    admin_id = db.Column(db.Integer, db.ForeignKey('administrator.id'))
-    # how do I track which content they modified??
-
-    def __repr__(self):
-        return f"<Mod Id: {self.log_id} timestamp: {self.timestamp}"
+# end models
