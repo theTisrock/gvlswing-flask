@@ -66,16 +66,19 @@ def admin_register():
     if current_user.is_authenticated:
         flash("You're already logged in")
         return redirect(url_for(Action.admin_panel))
-    elif request.method == 'GET':
+    elif request.method == 'GET' and current_user.is_anonymous:
         return render_template("register.html", form=form)
-    elif request.method == 'POST' and form.validate_on_submit():
+    elif form.validate_on_submit() and request.method == 'POST':
         user = Administrator(username=form.username.data, email=form.email.data)
         user.set_password(form.password.data)
         # user.set_role("dancer")
         db.session.add(user)
-        db.session.commit()
+        db.session.commit()  # commit at end of successful request
         flash("Registration successful!")
         return redirect(url_for(Action.index))
+    elif not form.validate_on_submit() and request.method == 'POST':
+        flash("Registration failed")
+        return render_template("register.html", form=form)
 
     return "Something went wrong with admin_register() procedure"
 
