@@ -9,6 +9,6 @@ from gvlswing_app.models import Administrator
 
 @app.shell_context_processor
 def make_shell_context():
-    return {'db': db, 'admin': Administrator}
+    return {'db': db, 'Admin': Administrator}
 
 # end entry point

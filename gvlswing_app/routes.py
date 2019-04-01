@@ -70,7 +70,7 @@ def admin_register():
     elif request.method == 'POST' and form.validate_on_submit():
         user = Administrator(username=form.username.data, email=form.email.data)
         user.set_password(form.password.data)
-        user.set_role("dancer")
+        # user.set_role("dancer")
         db.session.add(user)
         db.session.commit()
         flash("Registration successful!")
