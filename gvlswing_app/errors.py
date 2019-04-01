@@ -1,5 +1,5 @@
 # errors
-from gvlswing_app import app
+from gvlswing_app import app, db
 
 
 @app.errorhandler(404)
@@ -9,6 +9,7 @@ def http_not_found_error(error):
 
 @app.errorhandler(500)
 def http_application_error(error):
+    db.session.rollback()
     return "It's not you ... it's me", 500
 
 # end errors
