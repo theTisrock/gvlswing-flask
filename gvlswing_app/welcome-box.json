@@ -1,0 +1,24 @@
+{
+  "data": {
+
+    "quantity-time": {
+
+      "dance": "3 hours of dance",
+      "lessons": "30 minutes lesson(s)"
+
+    },
+
+    "description-price": "for only $4",
+
+    "frequency": "every",
+
+    "days_of_week": "tuesday",
+
+    "timespan": {
+
+      "start-time": "7:00pm",
+      "end-time" : "10:30pm"
+
+    }
+  }
+}
