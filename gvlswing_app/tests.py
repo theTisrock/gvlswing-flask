@@ -19,7 +19,7 @@ class AdministratorModelCase(unittest.TestCase):
 
         exists = Administrator.query.filter_by(username="testuser").first()
 
-        self.assertEqual(new_user.username, exists.username)
+        self.assertEqual(new_user, exists)
 
 
 if __name__ == '__main__':
