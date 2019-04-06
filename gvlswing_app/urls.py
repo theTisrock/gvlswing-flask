@@ -21,7 +21,8 @@ class URL():
     admin_login = admin + '/login'
     admin_register = admin + '/register'
     logout = '/logout'
-
+    cms = '/cms'
+    edit_index = admin + cms + '/edit_index'
 
 
 # end urls
