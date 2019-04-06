@@ -7,7 +7,7 @@
 
 from gvlswing_app import app, db  # use the flask app object created in __init__.py
 from gvlswing_app.urls import Action, URL
-from gvlswing_app.forms import LoginForm, RegistrationForm
+from gvlswing_app.forms import LoginForm, RegistrationForm, CMSWelcomeForm
 from gvlswing_app.models import Administrator
 from gvlswing_app.cms_no_db import CMSSimple
 from flask import render_template, url_for, redirect, flash, request
@@ -35,6 +35,12 @@ def admin_panel():
     return "Admin Control Panel: give selection of page & content to edit. Show admin activity log."
 
     # return "Something went wrong in admin_panel() procedure"
+
+
+@app.route(URL.edit_index)
+def edit_index():
+    cms_form = CMSWelcomeForm()
+    return render_template("edit_index.html", title="Edit Index Page", cms_form=cms_form)
 
 
 @app.route(URL.admin_login, methods=['GET', 'POST'])  # the login form to grant access
