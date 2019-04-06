@@ -11,7 +11,12 @@ WELCOME PAGE CMS execution plan
     to certain datatypes, I have elected to read the landing page content about the main
     event from a JSON file.
 
-    This decision is intended to remove complexity from storing the data. I will also allow admins
+    https://docs.python.org/3/library/json.html
+
+    json.dumps(), json.dump() => Python object to JSON
+    json.loads(), json.load() => JSON object to Python
+
+    This decision is intended to remove complexity from storing and accessing the data. I will also allow admins
     to edit content without too much fear of messing it up in the database.
 
     1. Constructed a JSON file modeled after the front page that is already built.

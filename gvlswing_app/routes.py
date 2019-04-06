@@ -8,15 +8,22 @@
 from gvlswing_app import app, db  # use the flask app object created in __init__.py
 from gvlswing_app.urls import Action, URL
 from gvlswing_app.forms import LoginForm, RegistrationForm
+from gvlswing_app.models import Administrator
+from gvlswing_app.cms_no_db import CMSSimple
 from flask import render_template, url_for, redirect, flash, request
 from flask_login import current_user, login_user, logout_user, login_required
-from gvlswing_app.models import Administrator
 
 
 @app.route(URL.root)
 @app.route(URL.index)
 def index():
-    return render_template("index.html")
+    content = None
+    try:
+        content = CMSSimple.get_json_content("welcome_box.json")['data']
+    except FileNotFoundError:
+        flash("No json data found for welcome box.")
+        return render_template("index.html")
+    return render_template("index.html", title="GVL Swing Dance", welcome_data=content)
 
 
 @app.route(URL.admin_control_panel)  # admin landing

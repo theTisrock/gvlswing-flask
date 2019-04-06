@@ -12,14 +12,28 @@
         </div>
 
         <div class='welcome-info'>
-            <p>3 hours of dance.</p>
-            <a href='#' class='welcome-lessons-link'>30 minute lesson(s).</a> <!-- add link to explanation page with lesson breakdown -->
-            <p>for only $4.*</p> <!-- enable admin control -->
+            {% if welcome_data %}
+            <p>
+                {{ welcome_data.quantity_time.dance }}
+            </p>
+            <a href='#' class='welcome-lessons-link'>
+                {{ welcome_data.quantity_time.lessons }}
+            </a> <!-- add link to explanation page with lesson breakdown -->
+            <p>
+                {{ welcome_data.quantity_time.description_price }}
+            </p> <!-- enable admin control -->
             <br>
-            <p><i class='ion-ios-calendar-outline'></i>
-            Every Tuesday *</p>
-            <p><i class='ion-ios-time-outline'></i>
-            7:00pm &mdash; 10:30pm *</p> <!-- enable admin control -->
+
+            <p>
+                <i class='ion-ios-calendar-outline'></i>{{ welcome_data.frequency }} {{ welcome_data.days_of_week }}
+            </p>
+            <p>
+                <i class='ion-ios-time-outline'></i>
+                {{ welcome_data.timespan.start_time }} &mdash; {{ welcome_data.timespan.end_time }}
+            </p> <!-- enable admin control -->
+            {% else %}
+            <p>Data Access Error.</p>
+            {% endif %}
         </div>
     </div>
 
