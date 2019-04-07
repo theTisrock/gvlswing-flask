@@ -70,7 +70,8 @@ footer * {
     text-align: center;
 }
 
-.fine-print * {
+.fine-print {
+    bottom: 0;
     font-size: 20px;
     color: #000 !important;
 }

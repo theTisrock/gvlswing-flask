@@ -39,7 +39,9 @@ def admin_panel():
 
 @app.route(URL.edit_index)
 def edit_index():
-    cms_form = CMSWelcomeForm()
+    form_preloads = CMSSimple.get_json_content("welcome_box.json")  # read json data
+    cms_form = CMSWelcomeForm()  # build form pre-populated with json data
+    cms_form.quantity_dance_duration.default = form_preloads['data']['quantity_time']['dance']
     return render_template("edit_index.html", title="Edit Index Page", cms_form=cms_form)
 
 

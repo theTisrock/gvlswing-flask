@@ -3,6 +3,7 @@ from flask_wtf import FlaskForm
 from wtforms import StringField, PasswordField, BooleanField, SubmitField
 from wtforms.validators import DataRequired, ValidationError, Email, EqualTo
 from gvlswing_app.models import Administrator
+from gvlswing_app.cms_no_db import CMSSimple
 
 
 class LoginForm(FlaskForm):
@@ -33,13 +34,38 @@ class RegistrationForm(FlaskForm):
 
 
 class CMSWelcomeForm(FlaskForm):
-    quantity_dance_duration = StringField("Dance Duration")
-    quantity_lesson_duration = StringField("Lesson(s) Duration")
-    description_price = StringField("Price and/or description")
-    event_frequency = StringField("Frequency. Ex: Every, every other")
-    days_of_week = StringField("Day(s) of the week")
-    timespan_start = StringField("Start Time")
-    timespan_stop = StringField("Stop Time")
+    prepopulate = CMSSimple.get_json_content("welcome_box.json")
+    quantity_dance_duration = StringField("Dance Duration",
+                                          validators=[DataRequired()],
+                                          default=prepopulate['data']['quantity_time']['dance'])
+    quantity_lesson_duration = StringField("Lesson(s) Duration",
+                                           validators=[DataRequired()],
+                                           default=prepopulate['data']['quantity_time']['lessons'])
+    description_price = StringField("Price and/or description",
+                                    validators=[DataRequired()],
+                                    default=prepopulate['data']['description_price'])
+    event_frequency = StringField("Frequency. Ex: Every, every other",
+                                  validators=[DataRequired()],
+                                  default=prepopulate['data']['frequency'])
+    days_of_week = StringField("Day(s) of the week",
+                               validators=[DataRequired()],
+                               default=prepopulate['data']['days_of_week'])
+    timespan_start = StringField("Start Time",
+                                 validators=[DataRequired()],
+                                 default=prepopulate['data']['timespan']['start_time'])
+    timespan_stop = StringField("Stop Time",
+                                validators=[DataRequired()],
+                                default=prepopulate['data']['timespan']['end_time'])
     submit = SubmitField("Save Changes")
+
+    # def __init__(self, defaults_dict):
+    #     CMSWelcomeForm.quantity_dance_duration.default = defaults_dict['data']['quantity_time']['dance']
+    #     CMSWelcomeForm.quantity_lesson_duration.default = defaults_dict['data']['quantity_time']['lessons']
+    #     CMSWelcomeForm.description_price.default = defaults_dict['data']['description_price']
+    #     CMSWelcomeForm.event_frequency.default = defaults_dict['data']['frequency']
+    #     CMSWelcomeForm.days_of_week.default = defaults_dict['data']['days_of_week']
+    #     CMSWelcomeForm.timespan_start.default = defaults_dict['data']['timespan']['start_time']
+    #     CMSWelcomeForm.timespan_stop.default = defaults_dict['data']['timespan']['end_time']
+
 
 # end forms
