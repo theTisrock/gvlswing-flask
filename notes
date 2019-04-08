@@ -3,3 +3,26 @@ DATABASE DESIGN:
 Models
         1) Administrator: id, username, password, privilege
         2) Event: id, day_of_week, price, time_frame, title
+
+
+WELCOME PAGE CMS execution plan
+
+    Instead of storing data with variable contents in a database that is restricted
+    to certain datatypes, I have elected to read the landing page content about the main
+    event from a JSON file.
+
+    https://docs.python.org/3/library/json.html
+
+    json.dumps(), json.dump() => Python object to JSON
+    json.loads(), json.load() => JSON object to Python
+
+    This decision is intended to remove complexity from storing and accessing the data. I will also allow admins
+    to edit content without too much fear of messing it up in the database.
+
+    1. Constructed a JSON file modeled after the front page that is already built.
+    2. Construct a method that reads in the JSON data from the file and returns it.
+        - use jsonify and json libraries
+    3. Before loading the index.html page, read-in the JSON data
+    4. Pass JSON to the template.
+    5. Apply passed-in JSON to the template.
+    DONE.

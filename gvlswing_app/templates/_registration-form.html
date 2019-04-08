@@ -1,5 +1,5 @@
 <label for="registration-form">Registration Form</label>
-<form id="registration-form" class="registration-form" action="/admin/register">
+<form id="registration-form" class="registration-form" action="/admin/register" method="post">
     {{ form.hidden_tag() }} <!-- hidden input -->
     <p>
         {{ form.username.label }} <br>

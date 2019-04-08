@@ -12,7 +12,7 @@ class Administrator(UserMixin, db.Model):
     password_hash = db.Column(db.String(128))
 
     def __repr__(self):
-        return f"<[Admin]:{self.username} [Role]: {self.role} [Email]: {self.email}>"
+        return f"<[Admin]: {self.username} [Email]: {self.email}>"
 
     # setters
     def set_email(self, email_entered):
@@ -28,8 +28,8 @@ class Administrator(UserMixin, db.Model):
     def get_username(self):
         return self.username
 
-    def get_role(self):
-        return self.role
+    # def get_role(self):
+    #     return self.role
 
     # checkers
     def check_password(self, password_entered):  # upon login
