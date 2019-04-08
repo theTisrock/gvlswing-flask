@@ -3,7 +3,7 @@ from flask_wtf import FlaskForm
 from wtforms import StringField, PasswordField, BooleanField, SubmitField
 from wtforms.validators import DataRequired, ValidationError, Email, EqualTo
 from gvlswing_app.models import Administrator
-from gvlswing_app.cms_no_db import CMSSimple
+from gvlswing_app.cms_no_db import Content
 
 
 class LoginForm(FlaskForm):
@@ -34,7 +34,7 @@ class RegistrationForm(FlaskForm):
 
 
 class CMSWelcomeForm(FlaskForm):
-    prepopulate = CMSSimple.get_json_content("welcome_box.json")
+    prepopulate = Content.get_json_content("welcome_box.json")
     quantity_dance_duration = StringField("Dance Duration",
                                           validators=[DataRequired()],
                                           default=prepopulate['data']['quantity_time']['dance'])
@@ -57,15 +57,5 @@ class CMSWelcomeForm(FlaskForm):
                                 validators=[DataRequired()],
                                 default=prepopulate['data']['timespan']['end_time'])
     submit = SubmitField("Save Changes")
-
-    # def __init__(self, defaults_dict):
-    #     CMSWelcomeForm.quantity_dance_duration.default = defaults_dict['data']['quantity_time']['dance']
-    #     CMSWelcomeForm.quantity_lesson_duration.default = defaults_dict['data']['quantity_time']['lessons']
-    #     CMSWelcomeForm.description_price.default = defaults_dict['data']['description_price']
-    #     CMSWelcomeForm.event_frequency.default = defaults_dict['data']['frequency']
-    #     CMSWelcomeForm.days_of_week.default = defaults_dict['data']['days_of_week']
-    #     CMSWelcomeForm.timespan_start.default = defaults_dict['data']['timespan']['start_time']
-    #     CMSWelcomeForm.timespan_stop.default = defaults_dict['data']['timespan']['end_time']
-
 
 # end forms

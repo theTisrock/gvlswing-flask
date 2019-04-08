@@ -7,16 +7,14 @@
 import json
 import os
 
+base_directory = os.path.abspath(os.path.dirname(__file__))
 
-class CMSSimple(object):
+
+class Content(object):
 
     @staticmethod
     def get_json_content(json_file_name):
-
-        base_directory = os.path.abspath(os.path.dirname(__file__))
         full_file_name = os.path.join(base_directory, json_file_name)
-
-        print(full_file_name)
 
         file = open(full_file_name, mode='r')
         json_raw = file.read()  # read in all contents
@@ -24,5 +22,15 @@ class CMSSimple(object):
         file.close()  # always remember to close
 
         return converted
+
+    @staticmethod
+    def set_json_content(json_file_name, content_dict):
+        json_raw = json.dumps(content_dict)  # json to raw text
+        full_file_name = os.path.join(base_directory, json_file_name)
+
+        file = open(full_file_name, mode='w')
+        file.write(json_raw)
+
+        file.close()  # always remember to close
 
 # end cms-no-db
