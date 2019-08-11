@@ -1,6 +1,9 @@
 # models
 
-# code
+from flask_login import UserMixin
+from gvlswing_app import db, login
+from werkzeug.security import generate_password_hash, check_password_hash
+
 
 class Administrator(UserMixin, db.Model):
     id = db.Column(db.Integer, primary_key=True)

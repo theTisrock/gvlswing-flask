@@ -5,7 +5,8 @@ from wtforms.validators import DataRequired, ValidationError, Email, EqualTo
 from gvlswing_app.models import Administrator
 from gvlswing_app.cms_no_db import Content
 
-# content
+# contents
+
 
 class LoginForm(FlaskForm):
     # static components
