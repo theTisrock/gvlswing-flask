@@ -93,7 +93,7 @@ def generate_less(data):
 
   for ionicon in data['icons']:
     chr_code = ionicon['code'].replace('0x', '\\')
-    d.append('.@{ionicons-prefix}%s:before { content: @ionicon-var-%s; }' % (ionicon['name'], ionicon['name']) )
+    d.append('.@{ionicons-prefix}%s:before { manage_content: @ionicon-var-%s; }' % (ionicon['name'], ionicon['name']) )
 
   f = open(icons_file_path, 'w')
   f.write( '\n'.join(d) )
@@ -139,7 +139,7 @@ def generate_scss(data):
 
   for ionicon in data['icons']:
     chr_code = ionicon['code'].replace('0x', '\\')
-    d.append('.#{$ionicons-prefix}%s:before { content: $ionicon-var-%s; }' % (ionicon['name'], ionicon['name']) )
+    d.append('.#{$ionicons-prefix}%s:before { manage_content: $ionicon-var-%s; }' % (ionicon['name'], ionicon['name']) )
 
   f = open(icons_file_path, 'w')
   f.write( '\n'.join(d) )
@@ -197,7 +197,7 @@ def generate_cheatsheet(data):
   template_html = template_html.replace("{{font_name}}", data["name"])
   template_html = template_html.replace("{{font_version}}", data["version"])
   template_html = template_html.replace("{{icon_count}}", str(len(data["icons"])) )
-  template_html = template_html.replace("{{content}}", '\n'.join(content) )
+  template_html = template_html.replace("{{manage_content}}", '\n'.join(content) )
 
   f = open(cheatsheet_file_path, 'w')
   f.write(template_html)
@@ -283,7 +283,7 @@ def generate_bower_json(data):
       "Max Lynch <max@drifty.com>"
     ],
     "description": "Ionicons - free and beautiful icons from the creators of Ionic Framework",
-    "main": [
+    "public": [
       "css/%s.css" % (data['name'].lower()),
       "fonts/*"
     ],
