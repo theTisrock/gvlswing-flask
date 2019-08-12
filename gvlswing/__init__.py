@@ -8,9 +8,9 @@ login = LoginManager()
 
 
 def create_app(config=Configuration):
-    app = Flask(__name__)
+    app = Flask(__name__)  # instantiate
 
-    login.init_app(app)
+    login.init_app(app)  # register extensions
 
     from gvlswing.public import bp as pub_bp
     app.register_blueprint(pub_bp)
