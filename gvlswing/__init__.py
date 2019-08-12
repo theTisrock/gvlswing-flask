@@ -10,6 +10,8 @@ login = LoginManager()
 def create_app(config=Configuration):
     app = Flask(__name__)  # instantiate
 
+    app.config['SECRET_KEY'] = Configuration.SECRET_KEY
+
     login.init_app(app)  # register extensions
 
     from gvlswing.public import bp as pub_bp
