@@ -10,6 +10,9 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    /* considering adding flex/grid at the root level VS at the component level. */
+    display: flex;
+    flex-direction: row;
 }
 
 html {
