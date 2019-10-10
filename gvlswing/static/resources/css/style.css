@@ -62,7 +62,7 @@ header {
 /*================== FOOTER SECTION ======================*/
 /*========================================================*/
 footer {
-    position: absolute;
+    /*position: absolute;*/
     /* display: block; */
     width: 100%;
     height: auto;
@@ -82,7 +82,7 @@ footer * {
         /*-------- WELCOME TEXTBOX ---------*/
 .welcome-textbox { /*parent element is .row */
 /*    border: 1px solid black;*/
-    position: relative;
+    /*position: relative;*/
     width: 95%;
     max-width: 400px;
     margin: 0 auto 2% auto; /* center */
@@ -91,7 +91,7 @@ footer * {
 .welcome-textbox p {
 /* positioning */
     /*display: block;*/
-    position: absolute;
+    /*position: absolute;*/
     top: 6%;
     left: -20%;
 /* content */
@@ -101,7 +101,7 @@ footer * {
 .welcome-textbox h1 {
 /* positioning */
     /*display: block;*/
-    position: relative;
+    /*position: relative;*/
     width: 90%;
     height: auto;
     margin: 5% auto 5% auto;
@@ -126,7 +126,7 @@ welcome-lessons-link:hover {
     border: 2px solid #cbc3c3;
     border-radius: 5%;
     background-color: rgba(4, 23, 54, 0.9);
-    position: relative;
+    /* position: relative; */
     margin: 0 auto 2% auto;
     padding: 2%;
     width: 90%;
@@ -316,7 +316,7 @@ a:link {
     
     .btn-welcome-screen {
 /*        positioning */
-        display: inline-block;
+        /*display: inline-block;*/
         width: 30%;
         float: left;
 	margin: 1%;
