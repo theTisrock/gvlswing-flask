@@ -63,7 +63,7 @@ header {
 /*========================================================*/
 footer {
     position: absolute;
-    display: block;
+    /* display: block; */
     width: 100%;
     height: auto;
     bottom: 0;
@@ -90,7 +90,7 @@ footer * {
 }
 .welcome-textbox p {
 /* positioning */
-    display: block;
+    /*display: block;*/
     position: absolute;
     top: 6%;
     left: -20%;
@@ -100,7 +100,7 @@ footer * {
 }
 .welcome-textbox h1 {
 /* positioning */
-    display: block;
+    /*display: block;*/
     position: relative;
     width: 90%;
     height: auto;
@@ -158,7 +158,7 @@ welcome-lessons-link:hover {
 
 .scroll-down {
 /* position */
-    display: none;
+    /*display: none;*/
     width: 120px;
     margin: 4% auto 0 auto;
 /* content */
@@ -192,7 +192,7 @@ welcome-lessons-link:hover {
 
 .btn-manage {
     /* border: 1px solid #fff; */
-    display: block;
+    /*display: block;*/
     margin: 0 auto;
     height: auto;
     max-width: 30%;
@@ -220,7 +220,7 @@ welcome-lessons-link:hover {
 
 .btn-welcome-screen {
 /* positioning */
-    display: inline-block;
+    /*display: inline-block;*/
     width: 92%;
     margin: 1% auto;
 /* content */
