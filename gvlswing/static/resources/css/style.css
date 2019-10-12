@@ -13,7 +13,6 @@
     box-sizing: border-box;
     /* considering adding flex/grid at the root level VS at the component level. */
     display: flex;
-    flex-direction: row;
 }
 
 html {
@@ -64,7 +63,7 @@ header {
 /*========================================================*/
 footer {
     /*position: absolute;*/
-    /* display: block; */
+    display: flex;
     width: 100%;
     height: auto;
     bottom: 0;
@@ -127,7 +126,8 @@ welcome-lessons-link:hover {
     border: 2px solid #cbc3c3;
     border-radius: 5%;
     background-color: rgba(4, 23, 54, 0.9);
-    /* position: relative; */
+    display: flex;
+    flex-direction: column;
     margin: 0 auto 2% auto;
     padding: 2%;
     width: 90%;
