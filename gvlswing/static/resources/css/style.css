@@ -83,9 +83,15 @@ footer * {
     width: 95%;
     max-width: 1200px;
     margin: 0 auto 2% auto; /* center */
-    font-size: 150%;
+    font-size: 100%;
     border: 2px solid white;
 }
+
+.welcome-textbox * {
+    /* assumes all contents within are text based (inline) */
+    display: inline;
+}
+
 .welcome-textbox p {
     /* position */
     /*display: block;*/
