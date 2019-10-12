@@ -13,7 +13,7 @@
     box-sizing: border-box;
     /* considering adding flex/grid at the root level VS at the component level. */
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
 }
 
 html {
