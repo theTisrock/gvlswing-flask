@@ -13,6 +13,7 @@
     box-sizing: border-box;
     /* considering adding flex/grid at the root level VS at the component level. */
     display: flex;
+    flex-direction: column;
 }
 
 html {
@@ -62,8 +63,6 @@ header {
 /*================== FOOTER SECTION ======================*/
 /*========================================================*/
 footer {
-    /*position: absolute;*/
-    display: flex;
     width: 100%;
     height: auto;
     bottom: 0;
