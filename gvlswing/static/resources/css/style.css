@@ -87,7 +87,7 @@ footer * {
     border: 2px solid white;
 }
 
-.welcome-textbox * {
+.welcome-textbox p, h1, span {
     /* assumes all contents within are text based (inline) */
     display: inline;
 }
