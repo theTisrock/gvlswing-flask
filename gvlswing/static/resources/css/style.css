@@ -18,7 +18,7 @@
 
 html {
     font-family: 'Lato', 'Arial', sans-serif;
-    font-size: 19px;
+    font-size: 25px;
     font-weight: 300;
     text-rendering: optimizeLegibility;
 }
@@ -81,10 +81,11 @@ footer * {
         /*-------- WELCOME TEXTBOX ---------*/
 .welcome-textbox {
     width: 100%;
-    max-width: 1200px;
-    margin: 0 auto 2% auto; /* center */
-    font-size: 110%;
-    border: 2px solid white;
+    max-width: 550px;
+    margin: 0 auto 1% auto; /* center */
+    font-size: 100%;
+    /* border: 2px solid white; */
+    justify-content: center;
 }
 
 .welcome-textbox p, h1, span {
@@ -99,7 +100,7 @@ footer * {
     top: 6%;
     left: -20%;
     /* content */
-    font-size: 50%;
+    font-size: 80%;
     font-weight: 900;
 }
 .welcome-textbox h1 {
@@ -133,7 +134,7 @@ welcome-lessons-link:hover {
     width: 90%;
     height: 50%;
     font-family: 'Galada', 'Arial', sans-serif;
-    font-size: 300%;
+    font-size: 100%;
     color: #e1e7f4;
     text-align: center;
     line-height: 150%;
