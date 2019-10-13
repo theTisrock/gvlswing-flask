@@ -31,7 +31,7 @@ body {
     background-size: cover;
     background-image: url(img/dancefloor.jpg);
     background-attachment: fixed;
-    padding-top: 2%;
+    padding: 0.5%;
     min-height: 100vh; /* added to fix excess white space near bottom of header when resizing the screen */
     color: #031127;
 }
@@ -63,6 +63,7 @@ header {
 /*================== FOOTER SECTION ======================*/
 /*========================================================*/
 footer {
+    justify-content: center;
     width: 100%;
     height: auto;
     bottom: 0;
@@ -73,8 +74,11 @@ footer * {
 }
 
 .fine-print {
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: nowrap;
     bottom: 0;
-    font-size: 20px;
+    font-size: 15px;
     color: #000 !important;
 }
 
@@ -82,35 +86,33 @@ footer * {
 .welcome-textbox {
     width: 100%;
     max-width: 550px;
-    margin: 0 auto 1% auto; /* center */
+    margin: 0 auto; /* center */
     font-size: 100%;
     /* border: 2px solid white; */
-    justify-content: center;
 }
 
-.welcome-textbox p, h1, span {
+.welcome-textbox h1, span {
     /* assumes all contents within are text based (inline) */
     display: inline;
 }
 
 .welcome-textbox p {
     /* position */
-    /*display: block;*/
-    /*position: absolute;*/
-    top: 6%;
-    left: -20%;
+    display: inline-block;
+    padding-top: 5%;
+    padding-left: 5%;
     /* content */
-    font-size: 80%;
-    font-weight: 900;
+    font-size: 50%;
+    font-weight: 500;
 }
 .welcome-textbox h1 {
     /* position */
     width: 90%;
     height: auto;
-    margin: 5% auto 5% auto;
+    margin: 2.5% auto 2.5% auto;
     padding: 0;
     /* content */
-    font-size: 400%;
+    font-size: 200%;
     font-weight: 500;
     text-align: center;
     line-height: 96%;
@@ -126,15 +128,18 @@ welcome-lessons-link:hover {
 }
 
 .welcome-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     border: 2px solid #cbc3c3;
     border-radius: 5%;
     background-color: rgba(4, 23, 54, 0.9);
     margin: 0 auto 2% auto;
     padding: 2%;
     width: 90%;
-    height: 50%;
+    height: 80%;
     font-family: 'Galada', 'Arial', sans-serif;
-    font-size: 100%;
+    font-size: 110%;
     color: #e1e7f4;
     text-align: center;
     line-height: 150%;
@@ -154,13 +159,17 @@ welcome-lessons-link:hover {
 }
 
 .welcome-btn-area {
-/*    border: 1px solid white;*/
+    /* border: 3px solid white; */
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap-reverse;
     text-align: center;
+    width: 100%;
 }
 
 .scroll-down {
 /* position */
-    /*display: none;*/
+    display: none;
     width: 120px;
     margin: 4% auto 0 auto;
 /* content */
@@ -186,7 +195,7 @@ welcome-lessons-link:hover {
 .btn {
     /* border: 3px solid red; */
 /*    positioning */
-    padding: 19px 25px;
+    padding: 10px 20px;
 /*    content */
     word-spacing: 2px;
     white-space: nowrap;
@@ -227,7 +236,7 @@ welcome-lessons-link:hover {
     margin: 1% auto;
 /* content */
     text-align: center;
-    font-size: 250%;
+    font-size: 70%;
     color: #fff;
     transition: background-color 0.2s;
 }
