@@ -12,8 +12,6 @@
     padding: 0;
     box-sizing: border-box;
     /* considering adding flex/grid at the root level VS at the component level. */
-    display: flex;
-    flex-direction: column;
 }
 
 html {
@@ -31,9 +29,25 @@ body {
     background-size: cover;
     background-image: url(img/dancefloor.jpg);
     background-attachment: fixed;
-    padding: 0.5%;
-    min-height: 100vh; /* added to fix excess white space near bottom of header when resizing the screen */
-    color: #031127;
+    min-height: 100vh;/* added to fix excess white space near bottom of header when resizing the screen */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.content-area {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 900px;
+    width: 100%;
+    max-height: 800px;
+    margin: 0 auto;
+}
+
+hr {
+    color: black;
 }
 
 
@@ -49,20 +63,16 @@ h1, h2, h3, h4, h5, h6 {
 /*================== HEADER SECTION ======================*/
 /*========================================================*/
 header {
-    /* background-position: top;
-    background-size: cover;
-    background-image: url(img/dancefloor.jpg);
-    background-attachment: fixed;
-    padding-top: 2%;
-    min-height: 100vh; /* added to fix excess white space near bottom of header when resizing the screen */ /*
-    color: #031127;
-    font-size: inherit;*/
+    width: 85%;
+    /* justify-content: center; */
 }
 
 /*========================================================*/
 /*================== FOOTER SECTION ======================*/
 /*========================================================*/
 footer {
+    display: flex;
+    flex-direction: row;
     justify-content: center;
     width: 100%;
     height: auto;
@@ -70,13 +80,9 @@ footer {
 }
 
 footer * {
-    text-align: center;
 }
 
 .fine-print {
-    flex-direction: row;
-    justify-content: center;
-    flex-wrap: nowrap;
     bottom: 0;
     font-size: 15px;
     color: #000 !important;
@@ -84,11 +90,10 @@ footer * {
 
         /*-------- WELCOME TEXTBOX ---------*/
 .welcome-textbox {
-    width: 100%;
-    max-width: 550px;
-    margin: 0 auto; /* center */
     font-size: 120%;
-    /* border: 2px solid white; */
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
 }
 
 .welcome-textbox h1, span {
@@ -98,23 +103,16 @@ footer * {
 
 .welcome-textbox p {
     /* position */
-    display: inline-block;
-    padding-top: 5%;
-    padding-left: 5%;
+    padding-top: 1%;
+    padding-left: 1%;
     /* content */
     font-size: 50%;
     font-weight: 500;
+    text-align: right;
 }
 .welcome-textbox h1 {
-    /* position */
-    width: 90%;
-    height: auto;
-    margin: 2.5% auto 2.5% auto;
-    padding: 0;
-    /* content */
     font-size: 200%;
     font-weight: 500;
-    text-align: center;
     line-height: 96%;
 }
 .welcome-textbox span {
@@ -130,7 +128,6 @@ welcome-lessons-link:hover {
 .welcome-info {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     border: 2px solid #cbc3c3;
     border-radius: 5%;
     background-color: rgba(4, 23, 54, 0.9);
@@ -159,10 +156,8 @@ welcome-lessons-link:hover {
 }
 
 .welcome-btn-area {
-    /* border: 3px solid white; */
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap-reverse;
+    flex-direction: column-reverse;
     text-align: center;
     width: 100%;
 }
