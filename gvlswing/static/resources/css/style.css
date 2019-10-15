@@ -98,7 +98,8 @@ footer * {
 
 .welcome-textbox h1, span {
     /* assumes all contents within are text based (inline) */
-    display: inline;
+    display: inline-block;
+    margin-bottom: 2%;
 }
 
 .welcome-textbox p {
