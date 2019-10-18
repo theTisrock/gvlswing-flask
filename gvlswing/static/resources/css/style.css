@@ -31,8 +31,7 @@ body {
     background-attachment: fixed;
     border: 3px solid purple;
     display: grid;
-    grid-template-columns: auto;
-    grid-template-rows: auto;
+    grid-template-columns: 360px;
 }
 
 .content-area {
