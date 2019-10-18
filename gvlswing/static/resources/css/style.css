@@ -41,8 +41,8 @@ body {
     align-items: center;
     margin: 0 auto;
     min-height: 100vh;/* added to fix excess white space near bottom of header when resizing the screen */
-    min-width: 360px;
-    border: 3px solid purple;
+    /* min-width: 360px; */
+    /* width: 360px; */
 }
 
 
@@ -313,24 +313,42 @@ a:link {
 
 /* @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) { */
 
-/* @media only screen and (max-width: 375px) {
-    min-width: 360px;
-}*/
-/*
-@media only screen and (min-width: 361px) and (max-width: 549px) {
-    width: 361px;
-}
-
-@media only screen and (min-width: 550px) and (max-width: 650px)
+@media only screen and (max-width: 549px) {
     .content-area {
-        width: 550px;
+    width: 360px;
     }
 }
 
-@media only screen and (max-width: 1024px)
+@media only screen and (min-width: 550px) and (max-width: 767px) {
     .content-area {
-        max-width: 1024px;
+    width: 550px;
     }
-} */
+}
+
+@media only screen and (min-width: 600px) {
+
+    html {
+        font-size: 170%;
+    }
+    .welcome-btn-area {
+        flex-direction: row-reverse;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    html {
+        font-size: 190%;
+    }
+    .content-area {
+        width: 768px;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    .content-area {
+        width: 1000px;
+        line-height: 100%;
+    }
+}
 
 
