@@ -29,17 +29,14 @@ body {
     background-size: cover;
     background-image: url(img/dancefloor.jpg);
     background-attachment: fixed;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    border: 3px solid purple;
 }
 
 .content-area {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
     margin: 0 auto;
+    min-width: 360px;
+    max-width: 1200px;
+    border: 3px solid yellow;
     min-height: 100vh;/* added to fix excess white space near bottom of header when resizing the screen */
     /* min-width: 360px; */
     /* width: 360px; */
@@ -71,9 +68,7 @@ header {
 /*================== FOOTER SECTION ======================*/
 /*========================================================*/
 footer {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
+    display: grid;
     width: 100%;
     height: auto;
     bottom: 0;
@@ -91,9 +86,7 @@ footer * {
         /*-------- WELCOME TEXTBOX ---------*/
 .welcome-textbox {
     font-size: 120%;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
+    display: grid;
 }
 
 .welcome-textbox h1, span {
@@ -104,19 +97,20 @@ footer * {
 }
 
 .welcome-textbox p {
-    /* position */
     padding-top: 1%;
     padding-left: 1%;
-    /* content */
+    white-space: nowrap;
     font-size: 50%;
     font-weight: 500;
     text-align: right;
 }
+
 .welcome-textbox h1 {
     font-size: 200%;
     font-weight: 500;
     line-height: 96%;
 }
+
 .welcome-textbox span {
     color: #0a4a1b;
     text-shadow: 1px 2px #061939;
@@ -128,8 +122,7 @@ welcome-lessons-link:hover {
 }
 
 .welcome-info {
-    display: flex;
-    flex-direction: column;
+    display: grid;
     border: 2px solid #cbc3c3;
     border-radius: 5%;
     background-color: rgba(4, 23, 54, 0.9);
@@ -158,31 +151,18 @@ welcome-lessons-link:hover {
 }
 
 .welcome-btn-area {
-    display: flex;
-    flex-direction: column-reverse;
+    display: grid;
     text-align: center;
     width: 100%;
 }
 
 .scroll-down {
-/* position */
     display: none;
     width: 120px;
     margin: 4% auto 0 auto;
-/* content */
     font-size: 60%;
     text-align: center;
     white-space: nowrap;
-}
-
-
-/*========================================================*/
-/*================== REUSABLE COMPONENTS =================*/
-/*========================================================*/
-.row {
-/*    border: 2px solid yellow;*/
-    max-width: 1140px;
-    margin: 0 auto;
 }
 
 
@@ -252,7 +232,6 @@ welcome-lessons-link:hover {
     background-color: rgba(5, 27, 62, 1.0);
 }
 
-
 /*
 .btn-follow-us:last-child {
     background-color: rgba(5, 27, 62, 0.8);
@@ -315,40 +294,19 @@ a:link {
 
 @media only screen and (max-width: 549px) {
     .content-area {
-    width: 360px;
     }
 }
 
 @media only screen and (min-width: 550px) and (max-width: 767px) {
-    .content-area {
-    width: 550px;
-    }
 }
 
 @media only screen and (min-width: 600px) {
-
-    html {
-        font-size: 170%;
-    }
-    .welcome-btn-area {
-        flex-direction: row-reverse;
-    }
 }
 
 @media only screen and (min-width: 768px) {
-    html {
-        font-size: 190%;
-    }
-    .content-area {
-        width: 768px;
-    }
 }
 
 @media only screen and (min-width: 1200px) {
-    .content-area {
-        width: 1000px;
-        line-height: 100%;
-    }
 }
 
 
