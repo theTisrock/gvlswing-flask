@@ -40,7 +40,6 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 360px;
     margin: 0 auto;
     border: 3px solid purple;
 }
@@ -64,7 +63,7 @@ h1, h2, h3, h4, h5, h6 {
 /*================== HEADER SECTION ======================*/
 /*========================================================*/
 header {
-    max-height: 800px;
+    width: 95%;
 }
 
 /*========================================================*/
@@ -311,18 +310,26 @@ a:link {
 /* 1920 x 1080 8% of market */
 /* 375 x 667 5% of market */
 
+/* @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) { */
 
-@media only screen and (max-width: 375px) {
-
+@media only screen and (max-width: 360px) {
+    width: 100%;
 }
 
-@media only screen and (max-width: 1366px) {
-
+@media only screen and (min-width: 360px) and (max-width: 549px) {
+    width: 360px;
 }
 
-@media only screen and (max-width: 1920px) {
-
+@media only screen and (min-width: 550px) and (max-width: 650px)
+    .content-area {
+        width: 550px;
+    }
 }
 
+@media only screen and (max-width: 1024px)
+    .content-area {
+        max-width: 1024px;
+    }
+}
 
 
