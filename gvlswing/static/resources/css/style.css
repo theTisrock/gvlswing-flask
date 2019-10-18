@@ -11,9 +11,6 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    /* considering adding flex/grid at the root level VS at the component level. */
-    display: flex;
-    flex-direction: row;
 }
 
 html {
@@ -63,8 +60,8 @@ header {
 /*================== FOOTER SECTION ======================*/
 /*========================================================*/
 footer {
-    /*position: absolute;*/
-    /* display: block; */
+    position: absolute;
+    display: block;
     width: 100%;
     height: auto;
     bottom: 0;
@@ -83,7 +80,7 @@ footer * {
         /*-------- WELCOME TEXTBOX ---------*/
 .welcome-textbox { /*parent element is .row */
 /*    border: 1px solid black;*/
-    /*position: relative;*/
+    position: relative;
     width: 95%;
     max-width: 400px;
     margin: 0 auto 2% auto; /* center */
@@ -91,8 +88,8 @@ footer * {
 }
 .welcome-textbox p {
 /* positioning */
-    /*display: block;*/
-    /*position: absolute;*/
+    display: block;
+    position: absolute;
     top: 6%;
     left: -20%;
 /* content */
@@ -101,8 +98,8 @@ footer * {
 }
 .welcome-textbox h1 {
 /* positioning */
-    /*display: block;*/
-    /*position: relative;*/
+    display: block;
+    position: relative;
     width: 90%;
     height: auto;
     margin: 5% auto 5% auto;
@@ -127,7 +124,7 @@ welcome-lessons-link:hover {
     border: 2px solid #cbc3c3;
     border-radius: 5%;
     background-color: rgba(4, 23, 54, 0.9);
-    /* position: relative; */
+    position: relative;
     margin: 0 auto 2% auto;
     padding: 2%;
     width: 90%;
@@ -159,7 +156,7 @@ welcome-lessons-link:hover {
 
 .scroll-down {
 /* position */
-    /*display: none;*/
+    display: none;
     width: 120px;
     margin: 4% auto 0 auto;
 /* content */
@@ -193,7 +190,7 @@ welcome-lessons-link:hover {
 
 .btn-manage {
     /* border: 1px solid #fff; */
-    /*display: block;*/
+    display: block;
     margin: 0 auto;
     height: auto;
     max-width: 30%;
@@ -221,7 +218,7 @@ welcome-lessons-link:hover {
 
 .btn-welcome-screen {
 /* positioning */
-    /*display: inline-block;*/
+    display: inline-block;
     width: 92%;
     margin: 1% auto;
 /* content */
@@ -298,31 +295,11 @@ a:link {
     color: #fff; /* DEPRICATED - inherit color from context of parent container */
 }
 
+/* 
+/* 360 x 640 16% of market */
+/* 1366 x 768 9% of market */
+/* 1920 x 1080 8% of market */
+/* 375 x 667 5% of market */
 
 @media only screen and (min-width: 1000px) {
-    
-    .welcome-textbox h1 {
-        font-size: 260%;
-    }
-    
-    
-    .welcome-info {
-/*        position */
-        width: 66%;
-        /* content */
-        font-size: 200%;
-        line-height: 150%;
-    }
-    
-    
-    .btn-welcome-screen {
-/*        positioning */
-        /*display: inline-block;*/
-        width: 30%;
-        float: left;
-	margin: 1%;
-/*        content */
-        font-size: 110%;
-    }
-    
 }
