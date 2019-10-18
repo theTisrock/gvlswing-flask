@@ -2,7 +2,7 @@
 /*========== GREENVILLE SWING DANCE "style.css" ==========*/
 /*========================================================*/
 
-/* TODO: WELCOME TO UNCHANGED MASTER. */
+/* TODO: WELCOME TO MASTER. */
 
 /*========================================================*/
 /*============= BROWSER DEFAULT OVERRIDES ================*/
@@ -295,31 +295,11 @@ a:link {
     color: #fff; /* DEPRICATED - inherit color from context of parent container */
 }
 
+/* 
+/* 360 x 640 16% of market */
+/* 1366 x 768 9% of market */
+/* 1920 x 1080 8% of market */
+/* 375 x 667 5% of market */
 
 @media only screen and (min-width: 1000px) {
-    
-    .welcome-textbox h1 {
-        font-size: 260%;
-    }
-    
-    
-    .welcome-info {
-/*        position */
-        width: 66%;
-        /* content */
-        font-size: 200%;
-        line-height: 150%;
-    }
-    
-    
-    .btn-welcome-screen {
-/*        positioning */
-        display: inline-block;
-        width: 30%;
-        float: left;
-	margin: 1%;
-/*        content */
-        font-size: 110%;
-    }
-    
 }
