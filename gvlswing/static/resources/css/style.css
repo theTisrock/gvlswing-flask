@@ -40,11 +40,12 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    max-width: 900px;
-    width: 100%;
-    max-height: 800px;
+    width: 360px;
     margin: 0 auto;
+    border: 3px solid purple;
 }
+
+
 
 hr {
     color: black;
@@ -63,8 +64,7 @@ h1, h2, h3, h4, h5, h6 {
 /*================== HEADER SECTION ======================*/
 /*========================================================*/
 header {
-    width: 85%;
-    /* justify-content: center; */
+    max-height: 800px;
 }
 
 /*========================================================*/
@@ -304,33 +304,24 @@ a:link {
     color: #fff; /* DEPRICATED - inherit color from context of parent container */
 }
 
-/* 
-/* 360 x 640 16% of market */
+/* Width X Height */
+/* DEFAULT: 360 x 640 16% of market */
 /* 1366 x 768 9% of market */
 /* 1920 x 1080 8% of market */
 /* 375 x 667 5% of market */
 
-/*
-@media only screen and (min-width: 1000px) {
-    
-    .welcome-textbox h1 {
-        font-size: 260%;
-    }
-    
-    
-    .welcome-info {
-        width: 66%;
-        font-size: 200%;
-        line-height: 150%;
-    }
-    
-    
-    .btn-welcome-screen {
-        width: 30%;
-        float: left;
-	margin: 1%;
-        font-size: 110%;
-    }
-    
+
+@media only screen and (max-width: 375px) {
+
 }
-*/
+
+@media only screen and (max-width: 1366px) {
+
+}
+
+@media only screen and (max-width: 1920px) {
+
+}
+
+
+
