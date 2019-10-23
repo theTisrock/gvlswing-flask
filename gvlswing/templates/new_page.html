@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block head %}
+    {{ super() }}
+{% endblock %}
+{% block title %}New Page{% endblock %}
+
+{% block content_area %}
+    <p>This is the content area composed of the:</p>
+    {% block header %}
+        <p>header</p>
+    {% endblock header %}
+
+    {% block main %}
+        <p>main</p>
+    {% endblock main %}
+
+    {% block footer %}
+        <p>footer</p>
+    {% endblock footer %}
+{% endblock content_area %}
+
+<!-- end -->
