@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+{% block head %}
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="/static/vendors/css/normalize.css" ><!--BROWSER RESET-->
+    <link rel="stylesheet" type="text/css" href="/static/resources/css/style.css">  <!--CUSTOM STYLING & GRID-->
+    <!-- link rel="stylesheet" type="text/css" href="/static/vendors/css/ionicons.min.css" -->     <!--ICONS-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato|Galada">
+    <title>{% block title %}{% endblock %}</title>
+{% endblock head %}
+</head>
+<body>
+<div class="content-area">
+{% block content_area %}
+    <header>
+    {% block header %}
+    {% endblock header %}
+    </header>
+    <main>
+    {% block main %}
+    {% endblock main %}
+    </main>
+    <footer>
+    {% block footer %}
+    {% endblock footer %}
+    </footer>
+{% endblock content_area %}
+</div>
+</body>
+</html>
