@@ -29,16 +29,17 @@ body {
     background-size: cover;
     background-image: url(img/dancefloor.jpg);
     background-attachment: fixed;
-    border: 3px solid purple;
-    display: grid;
-    grid-template-columns: 360px;
 }
 
-.content-area {
+.content-area  {
+    max-width: 95%;
     margin: 0 auto;
-    border: 3px solid yellow;
-    min-height: 100vh;/* added to fix excess white space near bottom of header when resizing the screen */
-    border: 3px solid yellow;
+    min-height: 100vh; /* fix white space */
+    border: 2px solid yellow;
+}
+
+footer {
+    bottom: 0;
 }
 
 
@@ -56,25 +57,6 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 
-/*========================================================*/
-/*================== HEADER SECTION ======================*/
-/*========================================================*/
-header {
-    width: 95%;
-}
-
-/*========================================================*/
-/*================== FOOTER SECTION ======================*/
-/*========================================================*/
-footer {
-    display: grid;
-    width: 100%;
-    height: auto;
-    bottom: 0;
-}
-
-footer * {
-}
 
 .fine-print {
     bottom: 0;
@@ -85,7 +67,6 @@ footer * {
         /*-------- WELCOME TEXTBOX ---------*/
 .welcome-textbox {
     font-size: 120%;
-    display: grid;
 }
 
 .welcome-textbox h1, span {
@@ -121,7 +102,6 @@ welcome-lessons-link:hover {
 }
 
 .welcome-info {
-    display: grid;
     border: 2px solid #cbc3c3;
     border-radius: 5%;
     background-color: rgba(4, 23, 54, 0.9);
@@ -150,7 +130,6 @@ welcome-lessons-link:hover {
 }
 
 .welcome-btn-area {
-    display: grid;
     text-align: center;
     width: 100%;
 }
@@ -290,22 +269,41 @@ a:link {
 /* 375 x 667 5% of market */
 
 /* @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) { */
-
+/*
 @media only screen and (max-width: 549px) {
     .content-area {
+        width: 360px;
     }
 }
 
 @media only screen and (min-width: 550px) and (max-width: 767px) {
+    .content-area {
+        width: 550px;
+    }
 }
 
 @media only screen and (min-width: 600px) {
+    html {
+        font-size: 170%;
+    }
+    .content-area {
+
+    }
 }
 
 @media only screen and (min-width: 768px) {
+    html {
+        font-size: 190%;
+    }
+    .content-area {
+        width: 768px;
+    }
 }
 
 @media only screen and (min-width: 1200px) {
+    .content-area {
+        width: 1000px;
+        line-height: 100%;
+    }
 }
-
-
+*/
