@@ -32,20 +32,26 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    border: 3px solid red;
 }
 
 .content-area {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    max-width: 1000px;
     margin: 0 auto;
+    padding: 1%;
     min-height: 100vh;/* added to fix excess white space near bottom of header when resizing the screen */
     border: 3px solid yellow;
 }
 
+header {
+}
 
+main {
+}
+
+footer {
+    width: 100%;
+    height: auto;
+}
 
 hr {
     color: black;
@@ -60,27 +66,6 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 
-/*========================================================*/
-/*================== HEADER SECTION ======================*/
-/*========================================================*/
-header {
-    width: 95%;
-}
-
-/*========================================================*/
-/*================== FOOTER SECTION ======================*/
-/*========================================================*/
-footer {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    width: 100%;
-    height: auto;
-    bottom: 0;
-}
-
-footer * {
-}
 
 .fine-print {
     bottom: 0;
