@@ -63,14 +63,20 @@ h1, h2, h3, h4, h5, h6 {
     font-size: 15px;
     color: #000 !important;
 }
+/*----------- WELCOME AREA ------------------*/
+.welcome-area {
+    display: grid;
+    grid-template-areas:
+        "title title title"
+        "info info info"
+        "button button button";
+}
 
-        /*-------- WELCOME TEXTBOX ---------*/
-        /*-------- WELCOME TEXTBOX ---------*/
+
+/*-------- WELCOME TEXTBOX ---------*/
 .welcome-textbox {
+    grid-area: title;
     font-size: 120%;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
 }
 
 .welcome-textbox h1, span {
@@ -106,6 +112,7 @@ welcome-lessons-link:hover {
 }
 
 .welcome-info {
+    grid-area: info;
     border: 2px solid #cbc3c3;
     border-radius: 5%;
     background-color: rgba(4, 23, 54, 0.9);
@@ -134,6 +141,7 @@ welcome-lessons-link:hover {
 }
 
 .welcome-btn-area {
+    grid-area: button;
     text-align: center;
     width: 100%;
 }
